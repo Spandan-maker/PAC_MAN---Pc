@@ -112,6 +112,11 @@ function draw() {
       fireSound.play();
     }
     
+    if (ghostGroup.x < -30){
+      gameState = END;
+      gameOverSound.play();
+    }
+    
     if (ghostGroup.isTouching(fireball)){
       fireballGroup.destroyEach();
       ghostGroup.destroyEach();
