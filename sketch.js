@@ -114,8 +114,8 @@ function draw() {
     
     if (ghostGroup.isTouching(fireball)){
       fireballGroup.destroyEach();
-      
       ghostGroup.destroyEach();
+      score = score + 0.5;
     }
     
     if (ghostGroup.isTouching(pac) ||
@@ -133,6 +133,7 @@ function draw() {
     pac.velocityX = 0;
     pac.velocityY = 0;
     
+    fireballGroup.destroyEach();
     coinGroup.destroyEach();
     ghostGroup.destroyEach();
     backGround.visible = false;
