@@ -105,7 +105,8 @@ function draw() {
       var ghost_x_pos = ghostGroup.get(0).x;
                           
       if (ghost_x_pos < -30){ 
-        gameState = END; GameOverSound.play(); 
+        gameState = END; 
+        GameOverSound.play(); 
       
       } 
     }
