@@ -111,7 +111,7 @@ function draw() {
     }
     
     if (coinGroup.isTouching(pac)){
-      coinGroup[0].destroyEach();
+      coinGroup.destroyEach();
       score = score + 1;
       pointSound.play();
     }
@@ -123,7 +123,7 @@ function draw() {
     
     if (ghostGroup.isTouching(fireball)){
       fireballGroup.destroyEach();
-      ghostGroup[0].destroyEach();
+      ghostGroup.destroyEach();
       score = score + 0.5;
     }
     
