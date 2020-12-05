@@ -111,7 +111,7 @@ function draw() {
     }
     
     if (coinGroup.isTouching(pac)){
-      coinGroup.destroyEach();
+      coinGroup[0].destroyEach();
       score = score + 1;
       pointSound.play();
     }
@@ -121,14 +121,9 @@ function draw() {
       fireSound.play();
     }
     
-    if (ghostGroup.x < -30){
-      gameState = END;
-      gameOverSound.play();
-    }
-    
     if (ghostGroup.isTouching(fireball)){
       fireballGroup.destroyEach();
-      ghostGroup.destroyEach();
+      ghostGroup[0].destroyEach();
       score = score + 0.5;
     }
     
