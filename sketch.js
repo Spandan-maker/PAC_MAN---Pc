@@ -101,6 +101,15 @@ function draw() {
      pac.addImage("pac", pacImg); 
     }
     
+    if(ghostGroup.length){ 
+      var ghost_x_pos = ghostGroup.get(0).x;
+                          
+      if (ghost_x_pos < -30){ 
+        gameState = END; GameOverSound.play(); 
+      
+      } 
+    }
+    
     if (coinGroup.isTouching(pac)){
       coinGroup.destroyEach();
       score = score + 1;
@@ -110,6 +119,11 @@ function draw() {
     if (keyWentDown("space")){
       fireBall();
       fireSound.play();
+    }
+    
+    if (ghostGroup.x < -30){
+      gameState = END;
+      gameOverSound.play();
     }
     
     if (ghostGroup.isTouching(fireball)){
@@ -149,7 +163,6 @@ function draw() {
       reset();
     }
   }
-  
   
   drawSprites();
   
@@ -214,11 +227,4 @@ function spawnghosts(){
     
     ghostGroup.add(ghost);
   }
-}
-
-function tough(){
-  if (ghostGroup.x < -30){
-      gameState = END;
-      gameOverSound.play();
-    }
 }
